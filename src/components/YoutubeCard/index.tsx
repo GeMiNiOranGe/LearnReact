@@ -1,22 +1,18 @@
 import React from 'react';
 
+import { YoutubeCardProps } from '../../types/PropsTypes';
 import './style.css';
-
-export type YoutubeCardProps = {
-  videoId: string;
-  title: string;
-};
 
 function YoutubeCard({ videoId, title }: YoutubeCardProps): React.JSX.Element {
   return (
-    <a className="link" href={`https://www.youtube.com/watch?v=${videoId}`}>
+    <a className="card" href={`https://www.youtube.com/watch?v=${videoId}`}>
       <img
         className="image"
         src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
         alt="Youtube image"
       />
 
-      <p className="title">{title}</p>
+      <p>{title}</p>
     </a>
   );
 }
