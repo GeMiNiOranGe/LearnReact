@@ -1,8 +1,8 @@
 import React from 'react';
 
-import YoutubeCard from './components/YoutubeCard';
-import WelcomePage from './pages/WelcomePage';
-import './App.css';
+import YoutubeCard from '@/components/YoutubeCard';
+import WelcomePage from '@/pages/WelcomePage';
+import '@/App.css';
 
 function App(): React.JSX.Element {
   return (

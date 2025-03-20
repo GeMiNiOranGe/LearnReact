@@ -1,6 +1,6 @@
 import React from 'react';
 
-import logo from '../../assets/icons/logo.svg';
+import logo from '@/assets/icons/logo.svg';
 import './style.css';
 
 function WelcomePage(): React.JSX.Element {

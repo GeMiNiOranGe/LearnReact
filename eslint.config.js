@@ -33,4 +33,11 @@ export default [
       '@typescript-eslint/explicit-function-return-type': 'error',
     },
   },
+  {
+    files: ['*.cjs'],
+    rules: {
+      'no-undef': 'warn',
+      '@typescript-eslint/no-require-imports': 'off',
+    },
+  },
 ];
