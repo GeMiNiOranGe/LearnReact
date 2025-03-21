@@ -1,7 +1,7 @@
 import React from 'react';
 
-import YoutubeCard from '@/components/YoutubeCard';
-import WelcomePage from '@/pages/WelcomePage';
+import { YoutubeCard } from '@/components';
+import { WelcomePage } from '@/pages';
 import '@/App.css';
 
 function App(): React.JSX.Element {
