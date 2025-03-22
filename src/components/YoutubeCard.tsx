@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { YoutubeCardProps } from '@/types/PropsTypes';
-import './style.css';
+import '@/styles/YoutubeCard.css';
 
 function YoutubeCard({ videoId, title }: YoutubeCardProps): React.JSX.Element {
   return (

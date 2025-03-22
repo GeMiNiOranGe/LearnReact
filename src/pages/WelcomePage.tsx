@@ -1,7 +1,7 @@
 import React from 'react';
 
 import logo from '@/assets/icons/logo.svg';
-import './style.css';
+import '@/styles/WelcomePage.css';
 
 function WelcomePage(): React.JSX.Element {
   return (
