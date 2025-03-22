@@ -5,7 +5,7 @@ import '@/styles/WelcomePage.css';
 
 function WelcomePage(): React.JSX.Element {
   return (
-    <header className="header">
+    <header className="header" /* style={{ backgroundColor: '#283431' }} */>
       <img src={logo} className="logo" alt="logo" />
       <p>
         Edit <code>src/App.tsx</code> and save to reload.
