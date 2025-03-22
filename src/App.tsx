@@ -35,4 +35,4 @@ function App(): React.JSX.Element {
   );
 }
 
-export default App;
+export default React.memo(App);

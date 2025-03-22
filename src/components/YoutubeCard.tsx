@@ -25,4 +25,4 @@ function YoutubeCard({
   );
 }
 
-export default YoutubeCard;
+export default React.memo(YoutubeCard);

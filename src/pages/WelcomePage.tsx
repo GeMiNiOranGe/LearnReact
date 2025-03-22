@@ -22,4 +22,4 @@ function WelcomePage(): React.JSX.Element {
   );
 }
 
-export default WelcomePage;
+export default React.memo(WelcomePage);
