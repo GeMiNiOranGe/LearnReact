@@ -1,0 +1,28 @@
+.toggle {
+  width: calc(var(--toggle-size) * 2);
+  height: var(--toggle-size);
+  background-color: #ccc;
+  border-radius: 100rem;
+  cursor: pointer;
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+.toggle.active {
+  background-color: #00ff80;
+}
+
+.spinner {
+  width: var(--toggle-size);
+  height: var(--toggle-size);
+  background-color: white;
+  border-radius: 100rem;
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+.spinner.active {
+  transform: translateX(var(--toggle-size));
+}

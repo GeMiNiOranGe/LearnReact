@@ -4,3 +4,8 @@ export type YoutubeCardProps = React.Attributes & {
   videoId: string;
   title: string;
 };
+
+export type ToggleProps = {
+  size?: 'small' | 'medium' | 'large';
+  onChange?: (event: boolean) => void;
+};
