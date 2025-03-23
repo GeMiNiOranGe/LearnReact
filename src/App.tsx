@@ -9,20 +9,20 @@ import '@/App.css';
 function App(): React.JSX.Element {
   const [videos, setVideos] = useState<YoutubeCardProps[]>([]);
 
+  const fetchVideos = useCallback(() => {
+    const result = YoutubeVideos;
+    setVideos(result);
+  }, []);
+
   useEffect(() => {
     const timeout = setTimeout(fetchVideos, 2000);
 
     return (): void => {
       clearTimeout(timeout);
     };
-  }, []);
+  }, [fetchVideos]);
 
-  const fetchVideos = useCallback(() => {
-    const result = YoutubeVideos;
-    setVideos(result);
-  }, []);
-
-  const renderYoutubeCardItem = (item: YoutubeCardProps): React.JSX.Element => (
+  const renderVideoItem = (item: YoutubeCardProps): React.JSX.Element => (
     <YoutubeCard key={item.videoId} videoId={item.videoId} title={item.title} />
   );
 
@@ -30,7 +30,7 @@ function App(): React.JSX.Element {
     <>
       <WelcomePage />
 
-      <div className="videos">{videos.map(renderYoutubeCardItem)}</div>
+      <div className="videos">{videos.map(renderVideoItem)}</div>
     </>
   );
 }
