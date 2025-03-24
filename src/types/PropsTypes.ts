@@ -9,3 +9,10 @@ export type ToggleProps = {
   size?: 'small' | 'medium' | 'large';
   onChange?: (event: boolean) => void;
 };
+
+export type RadiantParticleProps = {
+  width: number;
+  height: number;
+  speed?: number;
+  size?: number;
+};
