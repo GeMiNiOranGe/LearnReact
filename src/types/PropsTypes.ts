@@ -16,3 +16,8 @@ export type RadiantParticleProps = {
   speed?: number;
   size?: number;
 };
+
+export type TicTacToeTileProps = React.Attributes & {
+  value: string;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
+};

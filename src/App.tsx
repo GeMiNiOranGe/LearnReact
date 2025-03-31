@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 
 import YoutubeVideos from '@/.mock/YoutubeVideos';
 import { YoutubeCard } from '@/components';
-import { WelcomePage } from '@/pages';
+import { TicTacToePage, WelcomePage } from '@/pages';
 import { YoutubeCardProps } from '@/types/PropsTypes';
 import '@/App.css';
 
@@ -28,6 +28,8 @@ function App(): React.JSX.Element {
 
   return (
     <>
+      <TicTacToePage />
+
       <WelcomePage />
 
       <div className="videos">{videos.map(renderVideoItem)}</div>
