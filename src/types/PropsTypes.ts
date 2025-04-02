@@ -21,3 +21,8 @@ export type TicTacToeTileProps = React.Attributes & {
   value: string;
   onClick?: React.MouseEventHandler<HTMLDivElement>;
 };
+
+export type TicTacToeGameBoardProps = {
+  tiles: string[];
+  onTileClick: (index: number) => void;
+};

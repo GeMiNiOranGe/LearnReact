@@ -1,20 +1,25 @@
 import React from 'react';
 
-import { TicTacToeTileProps } from '@/types/PropsTypes';
+import { TicTacToeGameBoardProps } from '@/types/PropsTypes';
 import TicTacToeTile from './TicTacToeTile';
 import '@/styles/TicTacToeGameBoard.css';
 
-function TicTacToeGameBoard(): React.JSX.Element {
+function TicTacToeGameBoard({
+  tiles,
+  onTileClick,
+}: TicTacToeGameBoardProps): React.JSX.Element {
   const renderTicTacToeTile = (
-    item: TicTacToeTileProps,
+    item: string,
     index: number,
-  ): React.JSX.Element => <TicTacToeTile key={index} value="TicTacToeTile" />;
-
-  return (
-    <div className="game-board">
-      {Array(9).fill(undefined).map(renderTicTacToeTile)}
-    </div>
+  ): React.JSX.Element => (
+    <TicTacToeTile
+      key={index}
+      value={item}
+      onClick={() => onTileClick(index)}
+    />
   );
+
+  return <div className="game-board">{tiles.map(renderTicTacToeTile)}</div>;
 }
 
 export default React.memo(TicTacToeGameBoard);
