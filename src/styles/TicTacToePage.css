@@ -1,0 +1,10 @@
+.game-board {
+  width: 60vh;
+  height: 60vh;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}

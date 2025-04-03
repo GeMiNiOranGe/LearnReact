@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TicTacToeGameBoard } from '@/components';
+import { TicTacToeTile } from '@/components';
 import { checkTicTacToeWinner } from '@/utilities';
 import '@/styles/global.css';
 import '@/styles/TicTacToePage.css';
@@ -29,15 +29,24 @@ function TicTacToePage(): React.JSX.Element {
     setIsXPlayerTurn(true);
   }, []);
 
+  const renderTicTacToeTile = (
+    item: string,
+    index: number,
+  ): React.JSX.Element => (
+    <TicTacToeTile
+      key={index}
+      value={item}
+      onClick={() => onTileClick(index)}
+    />
+  );
+
   return (
-    <div className="container">
+    <div className="container center">
       {winner && <span>Winner is {winner}</span>}
 
-      <TicTacToeGameBoard tiles={tiles} onTileClick={onTileClick} />
+      <div className="game-board">{tiles.map(renderTicTacToeTile)}</div>
 
-      <button type="button" onClick={onResetButtonClick}>
-        Reset game
-      </button>
+      <button onClick={onResetButtonClick}>Reset game</button>
     </div>
   );
 }
