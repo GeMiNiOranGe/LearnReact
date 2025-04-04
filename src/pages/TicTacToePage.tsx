@@ -1,4 +1,5 @@
 import React from 'react';
+import { Circle, Xmark } from 'iconoir-react';
 
 import { TicTacToeTile } from '@/components';
 import { checkTicTacToeWinner } from '@/utilities';
@@ -33,11 +34,13 @@ function TicTacToePage(): React.JSX.Element {
     item: string,
     index: number,
   ): React.JSX.Element => (
-    <TicTacToeTile
-      key={index}
-      value={item}
-      onClick={() => onTileClick(index)}
-    />
+    <TicTacToeTile key={index} onClick={() => onTileClick(index)}>
+      {item === 'X' ? (
+        <Xmark className="tile-icon x-player-icon" />
+      ) : item === 'O' ? (
+        <Circle className="tile-icon o-player-icon" />
+      ) : undefined}
+    </TicTacToeTile>
   );
 
   return (
