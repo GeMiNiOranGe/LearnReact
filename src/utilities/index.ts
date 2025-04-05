@@ -1,3 +1,5 @@
+import React from 'react';
+
 /**
  * @param tiles
  * @returns "X" or "x", "O" or "o", undefined
@@ -27,5 +29,20 @@ export function checkTicTacToeWinner(
     }
   }
 
+  return undefined;
+}
+
+export function determineComponent(
+  Component: React.ElementType | React.ReactNode,
+): React.JSX.Element | undefined {
+  if (React.isValidElement(Component)) {
+    return Component;
+  }
+  if (typeof Component === 'function') {
+    return React.createElement(Component);
+  }
+  if (typeof Component === 'object') {
+    return React.createElement(Component as React.ElementType);
+  }
   return undefined;
 }

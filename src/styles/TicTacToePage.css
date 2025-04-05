@@ -64,3 +64,12 @@
   100% {
   }
 }
+
+.button-box {
+  margin: 1rem 0;
+  display: flex;
+}
+
+.button:not(:last-child) {
+  margin-right: 0.5rem;
+}

@@ -27,3 +27,10 @@ export type IconProps = React.SVGProps<SVGSVGElement> & {
   size?: string | number;
   color?: string;
 };
+
+export type ButtonProps = {
+  className?: string;
+  label: string;
+  Icon?: React.ElementType | React.ReactNode;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+};

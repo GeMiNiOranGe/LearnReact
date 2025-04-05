@@ -1,7 +1,7 @@
 import React from 'react';
-import { Circle } from 'iconoir-react';
+import { Circle, Refresh } from 'iconoir-react';
 
-import { RadiantParticle, TicTacToeTile } from '@/components';
+import { Button, RadiantParticle, TicTacToeTile } from '@/components';
 import { checkTicTacToeWinner } from '@/utilities';
 import { Cross } from '@/assets/icons';
 import '@/styles/TicTacToePage.css';
@@ -43,6 +43,8 @@ function TicTacToePage(): React.JSX.Element {
     </TicTacToeTile>
   );
 
+  const renderResetIcon = React.useCallback(() => <Refresh />, []);
+
   return (
     <div className="container tic-tac-toe-page">
       <div className="turn-box center">
@@ -52,12 +54,40 @@ function TicTacToePage(): React.JSX.Element {
         <Cross className={`turn-icon ${isXPlayerTurn ? 'playing' : ''}`} />
       </div>
 
-      <div>
+      <div className="display-flex flex-column align-center">
         {winner && <span>Winner is {winner}</span>}
 
         <div className="game-board">{tiles.map(renderTicTacToeTile)}</div>
 
-        <button onClick={onResetButtonClick}>Reset game</button>
+        <div className="button-box">
+          <Button
+            className="button"
+            label="Reset 1"
+            Icon={renderResetIcon}
+            onClick={onResetButtonClick}
+          />
+
+          <Button
+            className="button"
+            label="Reset 2"
+            Icon={() => <Refresh />}
+            onClick={onResetButtonClick}
+          />
+
+          <Button
+            className="button"
+            label="Reset 3"
+            Icon={<Refresh />}
+            onClick={onResetButtonClick}
+          />
+
+          <Button
+            className="button"
+            label="Reset 4"
+            Icon={Refresh}
+            onClick={onResetButtonClick}
+          />
+        </div>
       </div>
 
       <div className="turn-box center">
