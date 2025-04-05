@@ -1,6 +1,10 @@
-.game-board {
-  --tile-icon-size: 12vh;
+@import url('global.css');
 
+.tic-tac-toe-page {
+  --tile-icon-size: 12vh;
+}
+
+.game-board {
   width: 60vh;
   height: 60vh;
   border-width: 1px;
@@ -13,15 +17,6 @@
 
 .tile-icon {
   filter: drop-shadow(4px 4px 5px rgba(0, 0, 0, 0.5));
-}
-
-.tile-icon.x-player-icon {
   width: calc(var(--tile-icon-size));
   height: calc(var(--tile-icon-size));
-}
-
-.tile-icon.o-player-icon {
-  width: calc(var(--tile-icon-size) / 3 * 2);
-  height: calc(var(--tile-icon-size) / 3 * 2);
-  stroke-width: 2.25px;
 }
