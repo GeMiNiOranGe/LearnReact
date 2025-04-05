@@ -2,6 +2,12 @@
 
 .tic-tac-toe-page {
   --tile-icon-size: 12vh;
+  --icon-size: 36vh;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: tan;
 }
 
 .game-board {
@@ -16,7 +22,45 @@
 }
 
 .tile-icon {
-  filter: drop-shadow(4px 4px 5px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 0 1vh rgba(0, 0, 0, 0.75));
   width: calc(var(--tile-icon-size));
   height: calc(var(--tile-icon-size));
+}
+
+.turn-box {
+  height: 66vh;
+  width: 66vh;
+}
+
+.turn-icon {
+  width: calc(var(--icon-size));
+  height: calc(var(--icon-size));
+  position: relative;
+  color: lightgray;
+  transition: color 0.5s ease;
+}
+
+.turn-icon.playing {
+  animation: grow-size 0.1s forwards;
+  color: black;
+}
+
+.turn-icon:not(.playing) {
+  animation: shrink-size 0.025s forwards;
+}
+
+@keyframes grow-size {
+  0% {
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes shrink-size {
+  0% {
+    transform: scale(1.1);
+  }
+  100% {
+  }
 }

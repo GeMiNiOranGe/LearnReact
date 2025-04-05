@@ -11,8 +11,8 @@ export type ToggleProps = {
 };
 
 export type RadiantParticleProps = {
-  width: number;
-  height: number;
+  width: string;
+  height: string;
   speed?: number;
   size?: number;
 };
@@ -20,4 +20,10 @@ export type RadiantParticleProps = {
 export type TicTacToeTileProps = React.Attributes & {
   children?: React.JSX.Element;
   onClick?: React.MouseEventHandler<HTMLDivElement>;
+};
+
+export type IconProps = React.SVGProps<SVGSVGElement> & {
+  className?: string;
+  size?: string | number;
+  color?: string;
 };

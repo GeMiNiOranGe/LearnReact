@@ -23,8 +23,14 @@ function RadiantParticle({
       return;
     }
 
-    canvas.width = width;
-    canvas.height = height;
+    const resizeCanvas = (): void => {
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = rect.width;
+      canvas.height = rect.height;
+    };
+
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
 
     const particles: Particle[] = [];
 
@@ -57,7 +63,10 @@ function RadiantParticle({
     const interval = setInterval(createParticles, 100);
     animate();
 
-    return (): void => clearInterval(interval);
+    return (): void => {
+      clearInterval(interval);
+      window.removeEventListener('resize', resizeCanvas);
+    };
   }, [width, height, size, speed]);
 
   return (
@@ -65,9 +74,9 @@ function RadiantParticle({
       ref={canvasRef}
       style={{
         position: 'absolute',
-        top: 0,
-        left: 0,
         pointerEvents: 'none',
+        width,
+        height,
       }}
     />
   );

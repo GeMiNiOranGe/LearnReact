@@ -1,7 +1,7 @@
 import React from 'react';
 import { Circle } from 'iconoir-react';
 
-import { TicTacToeTile } from '@/components';
+import { RadiantParticle, TicTacToeTile } from '@/components';
 import { checkTicTacToeWinner } from '@/utilities';
 import { Cross } from '@/assets/icons';
 import '@/styles/TicTacToePage.css';
@@ -44,12 +44,28 @@ function TicTacToePage(): React.JSX.Element {
   );
 
   return (
-    <div className="tic-tac-toe-page container center">
-      {winner && <span>Winner is {winner}</span>}
+    <div className="container tic-tac-toe-page">
+      <div className="turn-box center">
+        {isXPlayerTurn && (
+          <RadiantParticle height="100vh" width="66vh" size={10} speed={20} />
+        )}
+        <Cross className={`turn-icon ${isXPlayerTurn ? 'playing' : ''}`} />
+      </div>
 
-      <div className="game-board">{tiles.map(renderTicTacToeTile)}</div>
+      <div>
+        {winner && <span>Winner is {winner}</span>}
 
-      <button onClick={onResetButtonClick}>Reset game</button>
+        <div className="game-board">{tiles.map(renderTicTacToeTile)}</div>
+
+        <button onClick={onResetButtonClick}>Reset game</button>
+      </div>
+
+      <div className="turn-box center">
+        {!isXPlayerTurn && (
+          <RadiantParticle height="100vh" width="66vh" size={10} speed={20} />
+        )}
+        <Circle className={`turn-icon ${!isXPlayerTurn ? 'playing' : ''}`} />
+      </div>
     </div>
   );
 }
