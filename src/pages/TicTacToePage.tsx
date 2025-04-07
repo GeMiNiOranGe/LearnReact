@@ -2,32 +2,39 @@ import React from 'react';
 import { Circle, Refresh } from 'iconoir-react';
 
 import { Button, RadiantParticle, TicTacToeTile } from '@/components';
+import { TicTacToePageState } from '@/types/StateTypes';
+import { TicTacToePageAction } from '@/types/Action';
+import { ticTacToePageReducer } from '@/store/reducers';
 import { checkTicTacToeWinner } from '@/utilities';
 import { Cross } from '@/assets/icons';
 import '@/styles/TicTacToePage.css';
+import { TicTacToePageActionType } from '@/types/Enums';
+
+const ticTacToePageInitialState: TicTacToePageState = {
+  tiles: Array(9).fill(undefined),
+  isXPlayerTurn: true,
+};
 
 function TicTacToePage(): React.JSX.Element {
-  const [tiles, setTiles] = React.useState<string[]>(Array(9).fill(undefined));
-  const [isXPlayerTurn, setIsXPlayerTurn] = React.useState(true);
+  const [state, dispatch] = React.useReducer<
+    TicTacToePageState,
+    [TicTacToePageAction]
+  >(ticTacToePageReducer, ticTacToePageInitialState);
 
-  const winner = checkTicTacToeWinner(tiles);
+  const winner = checkTicTacToeWinner(state.tiles);
 
   const onTileClick = React.useCallback<(index: number) => void>(
     index => {
-      const tilesCopy = [...tiles];
-      if (winner || tilesCopy[index]) {
-        return;
-      }
-      tilesCopy[index] = isXPlayerTurn ? 'X' : 'O';
-      setTiles(tilesCopy);
-      setIsXPlayerTurn(!isXPlayerTurn);
+      dispatch({
+        type: TicTacToePageActionType.OnTileClick,
+        payload: { index, winner },
+      });
     },
-    [tiles, isXPlayerTurn, winner],
+    [winner],
   );
 
   const onResetButtonClick = React.useCallback(() => {
-    setTiles(Array(9).fill(undefined));
-    setIsXPlayerTurn(true);
+    dispatch({ type: TicTacToePageActionType.OnResetButtonClick });
   }, []);
 
   const renderTicTacToeTile = (
@@ -48,16 +55,18 @@ function TicTacToePage(): React.JSX.Element {
   return (
     <div className="container tic-tac-toe-page">
       <div className="turn-box center">
-        {isXPlayerTurn && (
+        {state.isXPlayerTurn && (
           <RadiantParticle height="100vh" width="66vh" size={10} speed={20} />
         )}
-        <Cross className={`turn-icon ${isXPlayerTurn ? 'playing' : ''}`} />
+        <Cross
+          className={`turn-icon ${state.isXPlayerTurn ? 'playing' : ''}`}
+        />
       </div>
 
       <div className="display-flex flex-column align-center">
         {winner && <span>Winner is {winner}</span>}
 
-        <div className="game-board">{tiles.map(renderTicTacToeTile)}</div>
+        <div className="game-board">{state.tiles.map(renderTicTacToeTile)}</div>
 
         <div className="button-box">
           <Button
@@ -91,10 +100,12 @@ function TicTacToePage(): React.JSX.Element {
       </div>
 
       <div className="turn-box center">
-        {!isXPlayerTurn && (
+        {!state.isXPlayerTurn && (
           <RadiantParticle height="100vh" width="66vh" size={10} speed={20} />
         )}
-        <Circle className={`turn-icon ${!isXPlayerTurn ? 'playing' : ''}`} />
+        <Circle
+          className={`turn-icon ${!state.isXPlayerTurn ? 'playing' : ''}`}
+        />
       </div>
     </div>
   );
