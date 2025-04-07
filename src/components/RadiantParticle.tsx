@@ -9,6 +9,7 @@ function RadiantParticle({
   height,
   speed = 2,
   size = 2,
+  numberOfParticles = 5,
 }: RadiantParticleProps): React.JSX.Element {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -55,7 +56,7 @@ function RadiantParticle({
       }
       const centerX = canvas.width / 2;
       const centerY = canvas.height / 2;
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < numberOfParticles; i++) {
         particles.push(new Particle(centerX, centerY, size, speed));
       }
     }
@@ -67,7 +68,7 @@ function RadiantParticle({
       clearInterval(interval);
       window.removeEventListener('resize', resizeCanvas);
     };
-  }, [width, height, size, speed]);
+  }, [width, height, size, speed, numberOfParticles]);
 
   return (
     <canvas

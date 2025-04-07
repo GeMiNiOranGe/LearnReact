@@ -15,6 +15,7 @@ export type RadiantParticleProps = {
   height: string;
   speed?: number;
   size?: number;
+  numberOfParticles?: number;
 };
 
 export type TicTacToeTileProps = React.Attributes & {
