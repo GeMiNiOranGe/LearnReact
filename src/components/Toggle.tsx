@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 
-import { ToggleProps } from '@/types/PropsTypes';
+import type { ToggleProps } from '@/types';
 import '@/styles/Toggle.css';
 
 function Toggle({ size = 'small', onChange }: ToggleProps): React.JSX.Element {

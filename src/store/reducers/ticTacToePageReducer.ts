@@ -1,6 +1,5 @@
-import { TicTacToePageAction } from '@/types/Action';
-import { TicTacToePageActionType } from '@/types/Enums';
-import { TicTacToePageState } from '@/types/StateTypes';
+import type { TicTacToePageAction, TicTacToePageState } from '@/types';
+import { TicTacToePageActionType } from '@/enums';
 
 export default function ticTacToePageReducer(
   state: TicTacToePageState,

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 
 import { Particle } from '@/services';
-import { RadiantParticleProps } from '@/types/PropsTypes';
+import type { RadiantParticleProps } from '@/types';
 
 // Thanks ChatGPT for this component
 function RadiantParticle({

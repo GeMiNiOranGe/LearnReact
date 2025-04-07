@@ -1,5 +1,5 @@
-import { ReducerAction, ReducerActionWithoutPayload } from '.';
-import { TicTacToePageActionType } from './Enums';
+import type { ReducerAction, ReducerActionWithoutPayload } from './other';
+import type { TicTacToePageActionType } from '@/enums';
 
 export type TicTacToePageAction =
   | ReducerAction<

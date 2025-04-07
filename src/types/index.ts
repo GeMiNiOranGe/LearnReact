@@ -1,8 +1,4 @@
-export type ReducerAction<Type, Payload> = {
-  type: Type;
-  payload: Payload;
-};
-
-export type ReducerActionWithoutPayload<Type> = {
-  type: Type;
-};
+export * from './action';
+export * from './other';
+export * from './props';
+export * from './states';

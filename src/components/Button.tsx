@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ButtonProps } from '@/types/PropsTypes';
+import type { ButtonProps } from '@/types';
 import { determineComponent } from '@/utilities';
 import '@/styles/Button.css';
 

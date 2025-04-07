@@ -2,13 +2,12 @@ import React from 'react';
 import { Circle, Refresh } from 'iconoir-react';
 
 import { Button, RadiantParticle, TicTacToeTile } from '@/components';
-import { TicTacToePageState } from '@/types/StateTypes';
-import { TicTacToePageAction } from '@/types/Action';
+import { TicTacToePageActionType } from '@/enums';
+import type { TicTacToePageAction, TicTacToePageState } from '@/types';
 import { ticTacToePageReducer } from '@/store/reducers';
 import { checkTicTacToeWinner } from '@/utilities';
 import { Cross } from '@/assets/icons';
 import '@/styles/TicTacToePage.css';
-import { TicTacToePageActionType } from '@/types/Enums';
 
 const ticTacToePageInitialState: TicTacToePageState = {
   tiles: Array(9).fill(undefined),

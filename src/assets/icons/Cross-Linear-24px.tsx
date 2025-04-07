@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { IconProps } from '@/types/PropsTypes';
+import type { IconProps } from '@/types';
 
 function Cross({
   className,

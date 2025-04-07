@@ -1,4 +1,4 @@
-import { YoutubeCardProps } from '@/types/PropsTypes';
+import type { YoutubeCardProps } from '@/types';
 
 const YoutubeVideos: YoutubeCardProps[] = [
   {

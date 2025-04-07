@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { YoutubeCardProps } from '@/types/PropsTypes';
+import type { YoutubeCardProps } from '@/types';
 import '@/styles/YoutubeCard.css';
 
 function YoutubeCard({

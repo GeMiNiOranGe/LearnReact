@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import YoutubeVideos from '@/.mock/YoutubeVideos';
 import { YoutubeCard } from '@/components';
 import { TicTacToePage, WelcomePage } from '@/pages';
-import { YoutubeCardProps } from '@/types/PropsTypes';
+import type { YoutubeCardProps } from '@/types';
 import '@/App.css';
 
 function App(): React.JSX.Element {
