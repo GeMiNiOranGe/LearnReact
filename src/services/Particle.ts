@@ -1,3 +1,5 @@
+import { getCryptoRandom } from '@/utilities';
+
 class Particle {
   public x: number;
   public y: number;
@@ -9,9 +11,9 @@ class Particle {
   public constructor(x: number, y: number, size: number, speed: number) {
     this.x = x;
     this.y = y;
-    this.size = Math.random() * 5 + size;
-    this.speedX = (Math.random() - 0.5) * speed;
-    this.speedY = (Math.random() - 0.5) * speed;
+    this.size = getCryptoRandom() * 5 + size;
+    this.speedX = (getCryptoRandom() - 0.5) * speed;
+    this.speedY = (getCryptoRandom() - 0.5) * speed;
     this.opacity = 1;
   }
 

@@ -5,7 +5,7 @@ import { Button, RadiantParticle, TicTacToeTile } from '@/components';
 import { TicTacToePageActionType } from '@/enums';
 import type { TicTacToePageAction, TicTacToePageState } from '@/types';
 import { ticTacToePageReducer } from '@/store/reducers';
-import { checkTicTacToeWinner } from '@/utilities';
+import { checkTicTacToeWinner, determineComponent } from '@/utilities';
 import { Cross } from '@/assets/icons';
 import '@/styles/TicTacToePage.css';
 
@@ -39,15 +39,23 @@ function TicTacToePage(): React.JSX.Element {
   const renderTicTacToeTile = (
     item: string,
     index: number,
-  ): React.JSX.Element => (
-    <TicTacToeTile key={index} onClick={() => onTileClick(index)}>
-      {item === 'X' ? (
-        <Cross className="tile-icon" />
-      ) : item === 'O' ? (
-        <Circle className="tile-icon" />
-      ) : undefined}
-    </TicTacToeTile>
-  );
+  ): React.JSX.Element => {
+    let TileIcon: React.ElementType | React.ReactNode = undefined;
+
+    if (item === 'X') {
+      TileIcon = <Cross className="tile-icon" />;
+    }
+
+    if (item === 'O') {
+      TileIcon = <Circle className="tile-icon" />;
+    }
+
+    return (
+      <TicTacToeTile key={index} onClick={() => onTileClick(index)}>
+        {TileIcon && determineComponent(TileIcon)}
+      </TicTacToeTile>
+    );
+  };
 
   const renderResetIcon = React.useCallback(() => <Refresh />, []);
 

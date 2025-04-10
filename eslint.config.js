@@ -3,10 +3,12 @@ import pluginJs from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import pluginReact from 'eslint-plugin-react';
 import pluginReactHooks from 'eslint-plugin-react-hooks';
+import pluginSonarjs from 'eslint-plugin-sonarjs';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   pluginJs.configs.recommended,
+  pluginSonarjs.configs.recommended,
   pluginReact.configs.flat.recommended,
   pluginReactHooks.configs['recommended-latest'],
   ...tseslint.configs.recommended,

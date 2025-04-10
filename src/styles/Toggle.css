@@ -1,11 +1,14 @@
 .toggle {
-  width: calc(var(--toggle-size) * 2);
+  --transition-duration: 0.125s;
+
+  width: calc(var(--toggle-size) * 1.75);
   height: var(--toggle-size);
   background-color: #ccc;
   border-radius: 100rem;
+  padding: 0.125rem;
   cursor: pointer;
   transition-property: all;
-  transition-duration: 0.2s;
+  transition-duration: var(--transition-duration);
   transition-timing-function: ease-in-out;
 }
 
@@ -19,10 +22,10 @@
   background-color: white;
   border-radius: 100rem;
   transition-property: all;
-  transition-duration: 0.2s;
+  transition-duration: var(--transition-duration);
   transition-timing-function: ease-in-out;
 }
 
 .spinner.active {
-  transform: translateX(var(--toggle-size));
+  transform: translateX(calc(var(--toggle-size) * 0.75));
 }

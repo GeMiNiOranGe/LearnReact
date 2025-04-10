@@ -10,11 +10,9 @@ function Button({
   label,
   onClick,
 }: ButtonProps): React.JSX.Element {
-  const IconComponent = determineComponent(Icon);
-
   return (
     <button className={className} onClick={onClick}>
-      {IconComponent && IconComponent}
+      {Icon && determineComponent(Icon)}
       <span>{label}</span>
     </button>
   );

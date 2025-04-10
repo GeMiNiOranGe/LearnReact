@@ -15,21 +15,23 @@ function Toggle({ size = 'small', onChange }: ToggleProps): React.JSX.Element {
     }
   }, [isOn, onChange]);
 
-  const toggleSize = size === 'small' ? 24 : size === 'medium' ? 48 : 96;
-  const togglePadding = size === 'large' ? 8 : 4;
+  let toggleSize = 48;
+
+  if (size === 'medium') {
+    toggleSize = 36;
+  }
+
+  if (size === 'small') {
+    toggleSize = 24;
+  }
 
   return (
     <div
       className={`toggle ${isOn ? 'active' : ''}`}
-      style={
-        {
-          '--toggle-size': `${toggleSize}px`,
-          padding: `${togglePadding}px`,
-        } as React.CSSProperties
-      }
+      style={{ '--toggle-size': `${toggleSize}px` } as React.CSSProperties}
       onClick={onToggle}
     >
-      <div className={`spinner ${isOn ? 'active' : ''}`}></div>
+      <div className={`spinner ${isOn ? 'active' : ''}`} />
     </div>
   );
 }
