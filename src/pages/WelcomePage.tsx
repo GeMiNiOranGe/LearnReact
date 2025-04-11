@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 
 import logo from '@/assets/icons/logo.svg';
 import { Toggle } from '@/components';
-import '@/styles/WelcomePage.css';
+import '@/styles/css/WelcomePage.css';
 
 function WelcomePage(): React.JSX.Element {
   const [isLightMode, setIsLightMode] = useState(false);

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import type { YoutubeCardProps } from '@/types';
-import '@/styles/YoutubeCard.css';
+import '@/styles/css/YoutubeCard.css';
 
 function YoutubeCard({
   key,

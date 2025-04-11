@@ -7,7 +7,7 @@ import type { TicTacToePageAction, TicTacToePageState } from '@/types';
 import { ticTacToePageReducer } from '@/store/reducers';
 import { checkTicTacToeWinner, determineComponent } from '@/utilities';
 import { Cross } from '@/assets/icons';
-import '@/styles/TicTacToePage.css';
+import '@/styles/css/TicTacToePage.css';
 
 const ticTacToePageInitialState: TicTacToePageState = {
   tiles: Array(9).fill(undefined),

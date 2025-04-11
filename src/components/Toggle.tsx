@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 
 import type { ToggleProps } from '@/types';
-import '@/styles/Toggle.css';
+import '@/styles/css/Toggle.css';
 
 function Toggle({ size = 'small', onChange }: ToggleProps): React.JSX.Element {
   const [isOn, setIsOn] = useState(false);

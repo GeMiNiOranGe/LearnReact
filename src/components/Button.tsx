@@ -2,7 +2,7 @@ import React from 'react';
 
 import type { ButtonProps } from '@/types';
 import { determineComponent } from '@/utilities';
-import '@/styles/Button.css';
+import '@/styles/css/Button.css';
 
 function Button({
   className,

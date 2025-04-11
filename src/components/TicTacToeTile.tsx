@@ -1,7 +1,7 @@
 import React from 'react';
 
 import type { TicTacToeTileProps } from '@/types';
-import '@/styles/TicTacToeTile.css';
+import '@/styles/css/TicTacToeTile.css';
 
 function TicTacToeTile({
   key,
