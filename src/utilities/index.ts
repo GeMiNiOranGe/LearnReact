@@ -34,7 +34,7 @@ export function checkTicTacToeWinner(
 
 export function determineComponent(
   Component: React.ElementType | React.ReactNode,
-): React.JSX.Element | undefined {
+): React.ReactNode {
   if (React.isValidElement(Component)) {
     return Component;
   }
