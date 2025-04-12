@@ -1,8 +1,8 @@
 import React from 'react';
+import { YoutubeVideo } from './other';
 
 export type YoutubeCardProps = React.Attributes & {
-  videoId: string;
-  title: string;
+  item: YoutubeVideo;
 };
 
 export type ToggleProps = {

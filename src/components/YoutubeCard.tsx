@@ -1,27 +1,32 @@
 import React from 'react';
 
 import type { YoutubeCardProps } from '@/types';
-import '@/styles/css/YoutubeCard.css';
+import StyledCard from '@/styles/styled/YoutubeCard';
 
-function YoutubeCard({
-  key,
-  videoId,
-  title,
-}: YoutubeCardProps): React.JSX.Element {
+function YoutubeCard({ key, item }: YoutubeCardProps): React.JSX.Element {
   return (
-    <a
+    <StyledCard.Link
       key={key}
-      className="card"
-      href={`https://www.youtube.com/watch?v=${videoId}`}
+      href={`https://www.youtube.com/watch?v=${item.videoId}`}
     >
-      <img
-        className="image"
-        src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
-        alt="Youtube image"
+      <StyledCard.Thumbnail
+        src={`https://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg`}
+        alt="Thumbnail"
       />
 
-      <p>{title}</p>
-    </a>
+      <StyledCard.Content>
+        <StyledCard.AuthorImage
+          src={`https://yt3.googleusercontent.com/${item.authorImage}`}
+          alt="Author image"
+        />
+
+        <StyledCard.TitleBox>
+          <span>{item.title}</span>
+
+          <StyledCard.AuthorName>{item.authorName}</StyledCard.AuthorName>
+        </StyledCard.TitleBox>
+      </StyledCard.Content>
+    </StyledCard.Link>
   );
 }
 

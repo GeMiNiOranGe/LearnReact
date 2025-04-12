@@ -3,11 +3,11 @@ import React, { useCallback, useEffect, useState } from 'react';
 import YoutubeVideos from '@/.mock/YoutubeVideos';
 import { YoutubeCard } from '@/components';
 import { TicTacToePage, WelcomePage } from '@/pages';
-import type { YoutubeCardProps } from '@/types';
+import type { YoutubeVideo } from '@/types';
 import '@/App.css';
 
 function App(): React.JSX.Element {
-  const [videos, setVideos] = useState<YoutubeCardProps[]>([]);
+  const [videos, setVideos] = useState<YoutubeVideo[]>([]);
 
   const fetchVideos = useCallback(() => {
     const result = YoutubeVideos;
@@ -22,8 +22,8 @@ function App(): React.JSX.Element {
     };
   }, [fetchVideos]);
 
-  const renderVideoItem = (item: YoutubeCardProps): React.JSX.Element => (
-    <YoutubeCard key={item.videoId} videoId={item.videoId} title={item.title} />
+  const renderVideoItem = (item: YoutubeVideo): React.JSX.Element => (
+    <YoutubeCard key={item.videoId} item={item} />
   );
 
   return (
