@@ -1,7 +1,7 @@
 import React from 'react';
 
 import type { YoutubeCardProps } from '@/types';
-import StyledCard from '@/styles/styled/YoutubeCard';
+import StyledCard from '@/styles/styled-components/YoutubeCard';
 
 function YoutubeCard({ key, item }: YoutubeCardProps): React.JSX.Element {
   return (
