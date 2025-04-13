@@ -5,7 +5,7 @@ const thumbnailWidth = 45;
 const StyledCard = {
   Link: styled.a`
     text-decoration: none;
-    color: black;
+    color: ${({ theme }): string => theme.colors.text};
     width: ${thumbnailWidth}vh;
     margin-bottom: 1.5rem;
   `,
@@ -36,7 +36,7 @@ const StyledCard = {
 
   AuthorName: styled.span`
     font-size: 0.875rem;
-    color: gray;
+    color: ${({ theme }): string => theme.colors.subtext};
   `,
 };
 
