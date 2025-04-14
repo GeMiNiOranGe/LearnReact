@@ -3,7 +3,7 @@ import { ThemeProvider } from 'styled-components';
 
 import YoutubeVideos from '@/.mock/YoutubeVideos';
 import { YoutubeCard } from '@/components';
-import { TicTacToePage, WelcomePage } from '@/pages';
+import { PicsumPage, TicTacToePage, WelcomePage } from '@/pages';
 import type { YoutubeVideo } from '@/types';
 import theme from '@/styles/theme';
 import '@/styles/css/App.css';
@@ -30,6 +30,8 @@ function App(): React.JSX.Element {
 
   return (
     <ThemeProvider theme={theme}>
+      <PicsumPage />
+
       <TicTacToePage />
 
       <WelcomePage />

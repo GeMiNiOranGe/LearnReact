@@ -17,3 +17,12 @@ export type YoutubeVideo = {
 };
 
 export type AppTheme = typeof theme;
+
+export type PicsumPhoto = {
+  id: string;
+  author: string;
+  width: number;
+  height: number;
+  url: string;
+  download_url: string;
+};
