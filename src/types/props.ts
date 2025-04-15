@@ -1,5 +1,5 @@
 import React from 'react';
-import { YoutubeVideo } from './other';
+import { PicsumPhoto, YoutubeVideo } from './other';
 
 export type YoutubeCardProps = React.Attributes & {
   item: YoutubeVideo;
@@ -34,4 +34,8 @@ export type ButtonProps = {
   label: string;
   Icon?: React.ElementType | React.ReactNode;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
+};
+
+export type PicsumPhotoCardProps = {
+  item: PicsumPhoto;
 };

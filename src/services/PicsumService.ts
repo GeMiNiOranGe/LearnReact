@@ -1,6 +1,7 @@
-import { PICSUM_BASE_URL } from '@/config';
-import { PicsumPhoto } from '@/types';
 import axios from 'axios';
+
+import { PICSUM_BASE_URL } from '@/config';
+import type { PicsumPhoto } from '@/types';
 
 class PicsumService {
   public static async getPhotos(): Promise<PicsumPhoto[]> {

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 
+import { PicsumPhotoCard } from '@/components';
 import { PicsumService } from '@/services';
 import type { PicsumPhoto } from '@/types';
+import '@/styles/css/PicsumPage.css';
 
 function PicsumPage(): React.JSX.Element {
   const [photos, setPhotos] = useState<PicsumPhoto[]>([]);
@@ -15,7 +17,11 @@ function PicsumPage(): React.JSX.Element {
     fetchPhotos();
   }, [fetchPhotos]);
 
-  return <div className="container">{JSON.stringify(photos)}</div>;
+  const renderPhotoItem = (item: PicsumPhoto): React.JSX.Element => (
+    <PicsumPhotoCard item={item} />
+  );
+
+  return <div className="photos">{photos.map(renderPhotoItem)}</div>;
 }
 
 export default React.memo(PicsumPage);
