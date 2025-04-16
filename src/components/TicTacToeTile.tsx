@@ -4,12 +4,11 @@ import type { TicTacToeTileProps } from '@/types';
 import '@/styles/css/TicTacToeTile.css';
 
 function TicTacToeTile({
-  key,
   children,
   onClick,
 }: TicTacToeTileProps): React.JSX.Element {
   return (
-    <div key={key} className="tile" onClick={onClick}>
+    <div className="tile" onClick={onClick}>
       {children}
     </div>
   );

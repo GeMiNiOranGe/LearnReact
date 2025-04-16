@@ -18,7 +18,7 @@ function PicsumPage(): React.JSX.Element {
   }, [fetchPhotos]);
 
   const renderPhotoItem = (item: PicsumPhoto): React.JSX.Element => (
-    <PicsumPhotoCard item={item} />
+    <PicsumPhotoCard key={item.id} item={item} />
   );
 
   return <div className="photos">{photos.map(renderPhotoItem)}</div>;

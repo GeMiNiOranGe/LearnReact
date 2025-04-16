@@ -1,7 +1,7 @@
 import React from 'react';
 import { PicsumPhoto, YoutubeVideo } from './other';
 
-export type YoutubeCardProps = React.Attributes & {
+export type YoutubeCardProps = {
   item: YoutubeVideo;
 };
 
@@ -18,7 +18,7 @@ export type RadiantParticleProps = {
   numberOfParticles?: number;
 };
 
-export type TicTacToeTileProps = React.Attributes & {
+export type TicTacToeTileProps = {
   children?: React.ReactNode;
   onClick?: React.MouseEventHandler<HTMLDivElement>;
 };
