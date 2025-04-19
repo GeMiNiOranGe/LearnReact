@@ -1,7 +1,7 @@
 /* eslint-disable sonarjs/no-hardcoded-secrets */
 import type { YoutubeVideo } from '@/types';
 
-const YoutubeVideos: YoutubeVideo[] = [
+const youtubeVideos: YoutubeVideo[] = [
   {
     videoId: 'Vk5-c_v4gMU',
     title: 'Magnetic - ILLIT',
@@ -83,4 +83,4 @@ const YoutubeVideos: YoutubeVideo[] = [
   },
 ];
 
-export default YoutubeVideos;
+export default youtubeVideos;

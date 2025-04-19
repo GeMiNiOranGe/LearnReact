@@ -1,6 +1,6 @@
 import React from 'react';
 
-import YoutubeVideos from '@/.mock/YoutubeVideos';
+import youtubeVideos from '@/.mock/YoutubeVideos';
 import { YoutubeCard } from '@/components';
 import type { YoutubeVideo } from '@/types';
 import '@/styles/css/YoutubePage.css';
@@ -9,7 +9,7 @@ function YoutubePage(): React.JSX.Element {
   const [videos, setVideos] = React.useState<YoutubeVideo[]>([]);
 
   const fetchVideos = React.useCallback(() => {
-    const result = YoutubeVideos;
+    const result = youtubeVideos;
     setVideos(result);
   }, []);
 
